@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
+import './css/index.css'
 import apiKey from './config';
 import axios from 'axios';
 import {
@@ -85,11 +86,8 @@ export default class App extends Component {
       console.log('Error fetching and parsing data', error);
       });
   }
-
-
-
+  
   render() {
-    console.log(this.state.pictures)
     return (
         <BrowserRouter>
           <div className="container">   
