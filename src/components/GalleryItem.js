@@ -1,9 +1,9 @@
 import React from 'react';
 
-const GalleryItem = props => {
+const GalleryItem = ({url}) => {
   return (
     <li className='photo-container ul li'>
-      <img className='photo-container ul img' src={props.url} alt='pics' />
+      <img className='photo-container ul img' src={url} alt='pics' />
     </li>
   );
 };
