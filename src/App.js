@@ -102,20 +102,22 @@ export default class App extends Component {
              lakes={this.state.lake}
              river={this.state.river}
             />
-            <Switch>
+            
             {
               (this.state.loading)
               ? <h3 className='active'>Loading...</h3> 
-              : <Route exact path='/' render={() => <Gallery data={this.state.pictures} />} /> };
+              : 
+              <Switch>
+              <Route exact path='/' render={() => <Gallery data={this.state.pictures} />} />
 
                
                 <Route exact path= '/search' render={() => <Gallery data={this.state.pictures} />} />
-
-                <Route path= '/lake' render={() => <Gallery data={this.state.lake} />} />
-                <Route path= '/ocean' render={() => <Gallery data={this.state.ocean} />} />
-                <Route path= '/river' render={() => <Gallery data={this.state.river} />} />
+                <Route exact path= '/lake' render={() => <Gallery data={this.state.lake} />} />
+                <Route exact path= '/ocean' render={() => <Gallery data={this.state.ocean} />} />
+                <Route exact path= '/river' render={() => <Gallery data={this.state.river} />} />
                 <Route component={ NotFound } />
             </Switch>
+            };
           </div>
         </BrowserRouter>
     );
